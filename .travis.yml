@@ -2,14 +2,9 @@ sudo: true
 os: trusty
 cache: false
 env:
-  matrix:
-  - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
-  global:
-  - secure: SldmE2MZIsEVJUzHzru7+5IuA9aIEIeE3/dHiO3ZOYebeyIPIK8sbtGnf58dtZN9AQDLq4+Vn/uK2lFfTNsYEHBu6q6zeByoNBBSJalaoUdZxdJCN/7YZtDSp6G8NCgvEDsuObPqr7gxOUYRiSdKYoVRUIF+IDWOXzEByQpz/3NY5l2/pcGZTf7fxRzfei2hGkZBSsaJ6kU3PnnCT1E19xl+ZTDebqS167+6Yg2l9+/S4gSA3mNcJdWw3LnXrOWZfmA3qD/e8n36/oRhAn5wYoUZGNNODKjlIlElOIhI6JPzSPmF1JeBYMKn3GDyY7lwQ9row5hT7AdTumQo5KZKXxICScC2wNsuaXGT5o0iB9vaSS7zrS1rJswzniyCOZREB0bzzWPfFZk/GExz3JF8LCvIKCN+ZwVI5ZZtyxV2qPdFr2RdxkX6TVU0y7081kH5f0v3MYtblksd+k83y7X562h5MN048Zt/8kCaxVKD4LmwPLP2tOihpdGb3ub9nR2CizUduI8jDuy/I2fUyXFu3EzwWJDiWQen6a3/wBjBt0zB5r8NfwALzYZNN+ICyBpPMhVtLksFg+eXjy2Cl5It59/RymPiwWXrK1Vmyn3UsjdFHUmPZG0gcQ3CUZ12WwylYlxNGSGjhdLuOjES0AHM4O18VKvtenbqNT/FXAvBibQ=
-  - secure: PyY00vohjJ1vJJ4wO3icTe+qvl5/p4lw3QD6UShZSwI2K1ywDvgjJWf5+0pjUMTTEVf1xNppGM0/D5l8voWbBns3roYWc8PYka9aSftLkKO0NNVeFaBrlI62eU29pWT59GVeHFeJtQ/ZotCRO6gwMan2uiMQP4W1w5BXbuiquVIpeByL+exiWLS0E1m1/h7JcphMXKwhUGmJi2udXjhQW4Pc5dkocb1wBtBBPeRkK/GAv3T1pMVJXISfXOn/j2J9Mw9lCdss4XrKxfHqZWCfK39qLEpHYqOoz0cLaW3KI6xwdM28lbpgmBhwkZ2+l48/719YTyMkNx63LTjz4bvyW9GtMMTsIbkrnLBzKxzE3Ze9y+5sFeqIZKC6qk7OizzR7/lRWVxNQDVi7pE2EQCwBs4Zu0qNHJCc7Vaq1SU2mliHYWbEJwGWesAb0miopneDXiTj2UHLMYxlqiDTvSI/4vUJdANZ8Iq57TaGETji8GXhXv9mCPtDHDK59rHOF8FL/DF19W4/omzWd+pez7dwGIyrm9Sl+jPomiL6D9rz+QwF3RLuCu+CnGAVUVM/IHTdoN+Fh54Bk4DwPr30XdNsGTZuyF5ncwyQBcL2qLVQOEL4E8QMrESEtOk+KLYuJRGJCW+2GZp4tPvLAYV/CPdJ4QtFXNq9mVbHPy/50Z6h2Fk=
+- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
-- openssl aes-256-cbc -K $encrypted_79a2f6093848_key -iv $encrypted_79a2f6093848_iv
-  -in assets/server.key.enc -out assets/server.key -d
+-openssl aes-256-cbc pass:Hiee123 -in assets/server.key.enc -out assets/server.key -d
 - export SFDX_AUTOUPDATE_DISABLE=false
 - export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 - export SFDX_DOMAIN_RETRY=300
