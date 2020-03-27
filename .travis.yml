@@ -1,4 +1,3 @@
-sudo: true
 os: windows
 cache: false
 env:
