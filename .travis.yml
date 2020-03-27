@@ -5,13 +5,14 @@ env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
 - openssl enc -aes-256-cbc -md sha256 -salt -d -in assets/server.key.enc -out assets/server.key -k Hiee123 -pbkdf2
+- export SALESFORCE_CLI_URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 - export SFDX_AUTOUPDATE_DISABLE=false
 - export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 - export SFDX_DOMAIN_RETRY=300
 - export SFDX_DISABLE_APP_HUB=true
 - export SFDX_LOG_LEVEL=DEBUG
 - mkdir sfdx
-- wget -qO- $URL | tar xJ -C sfdx --strip-components 1
+- wget -qO- $SALESFORCE_CLI_URL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
